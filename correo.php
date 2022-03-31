@@ -10,7 +10,7 @@
 
 	$header = "Contacto desde ";
 
-	$carta = `De: $nombre\n Correo: $email\n Mensaje $mensaje\n`;
+	$carta = `De: $nombre \n Correo: $email \n Mensaje $mensaje \n`;
 
 
 	// Enviando mensaje
