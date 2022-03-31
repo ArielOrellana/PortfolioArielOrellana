@@ -15,7 +15,6 @@
 
 	// Enviando mensaje
 	mail($destinatario, $asunto, $carta, $header);
-	echo "<script>alert('correo enviado exitosamente')</script>";
 	header('Location:index.html');
 
  ?>
