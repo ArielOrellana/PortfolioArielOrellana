@@ -10,11 +10,11 @@
 
 	$header = "Contacto desde ";
 
-	$carta = `De: $nombre \n Correo: $email \n Mensaje $mensaje \n`;
+	$carta = `De: $nombre \n Correo: $email \n Mensaje $mensaje \n $header \n`;
 
 
 	// Enviando mensaje
-	mail($destinatario, $asunto, $carta, $header);
+	mail($destinatario, $asunto, $carta);
 	header('Location:index.html');
 
  ?>
