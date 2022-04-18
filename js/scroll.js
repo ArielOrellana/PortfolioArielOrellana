@@ -21,11 +21,6 @@ window.sr = ScrollReveal();
         origin: 'left',
         distance: '100px'
     });
-    sr.reveal('.sobreii', {
-        duration: 3000,
-        origin: 'rigth',
-        distance: '100px'
-    });
     sr.reveal('.maill', {
         duration: 2000,
         origin: 'left',
