@@ -32,7 +32,7 @@
                     },
                     {
                         id: 4,
-                        img: "/portfolio/portfolio4.png",
+                        img:"/portfolio/portfolio4.png",
                         descripccion:"",
                         titulo:"",
                     },

@@ -13,9 +13,14 @@ export default{
   methods: {
     descargarPDF: function(){
         // Si es una computadora, abre el PDF en una nueva pestaña
-        window.open("../public/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf", "_blank");
+        window.open("../PortfolioArielOrellana/public/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf", "_blank");
     },
   },
+  data(){
+    return{
+      url:'/PortfolioArielOrellana'
+    }
+  }
 
 }
 </script>
@@ -45,7 +50,7 @@ export default{
         <a href="https://github.com/ArielOrellana" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://gitlab.com/OrellanaAriel1998" target="_blank"><i class="fa-brands fa-gitlab"></i></a>
         <a href="https://www.linkedin.com/in/orellanaariel1998/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="/"><i class="fa-solid fa-globe"></i></a>
+        <router-link :to="{name: 'home'}"><i class="fa-solid fa-globe"></i></router-link>
         <a href="mailto:orellanaariel1998@gmail.com"><i class="fa-solid fa-envelope"></i></a>
         <button @click="descargarPDF" class="boton-azul"><i class="fa-solid fa-download"></i> Descargar CV</button>
       </nav>

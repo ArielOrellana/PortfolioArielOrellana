@@ -1,7 +1,7 @@
 <template>
     <div class="grid-container">
         <div class="card" v-for="card in cards" :key="card.id" @click="openModal(card)">
-            <img :src="card.img" class="card-image">
+            <img  :src="'/PortfolioArielOrellana'+ card.img" class="card-image">
             <div class="card-overlay">
                 <h2 class="card-title">{{ card.titulo }}</h2>
             </div>
@@ -23,6 +23,8 @@
     </div>
 </template>
 <script>
+import HomeView from '@/views/HomeView.vue';
+
 export default{
     props:['cards'],
     data(){
