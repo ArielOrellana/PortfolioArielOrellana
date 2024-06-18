@@ -1,4 +1,4 @@
-import{_ as o,D as n,c as i,a as t,r as s,o as r}from"./index-B3Zk3drd.js";const c={components:{DatosComp:n},data(){return{datosArray:[{titulo:"Desarrollador Web Full Stack",empresa:"Genube",inicio:"Junio de 2022",fin:"Actualidad",descripccion:`• Desarrollo y mantenimiento de sistema de gestión para instituciones educativas Genube. 
+import{_ as o,D as n,c as i,a as t,r as s,o as r}from"./index-7VffMxq7.js";const c={components:{DatosComp:n},data(){return{datosArray:[{titulo:"Desarrollador Web Full Stack",empresa:"Genube",inicio:"Junio de 2022",fin:"Actualidad",descripccion:`• Desarrollo y mantenimiento de sistema de gestión para instituciones educativas Genube. 
 • Análisis de requerimientos y soporte de un sistema contable integrado al sistema de gestión educativa Genube. 
 • Soporte en los distintos módulos del sistema. 
 • Implementacion de microservicios. 
