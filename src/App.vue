@@ -13,12 +13,16 @@ export default{
   methods: {
     descargarPDF: function(){
         // Si es una computadora, abre el PDF en una nueva pestaña
-        window.open("../PortfolioArielOrellana/public/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf", "_blank");
+        window.open("../PortfolioArielOrellana/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf", "_blank");
     },
+    closeModal(){
+      this.modalIndex= null
+    }
   },
   data(){
     return{
-      url:'/PortfolioArielOrellana'
+      url:'/PortfolioArielOrellana',
+      modalIndex: 1,
     }
   }
 
@@ -27,7 +31,14 @@ export default{
 
 <template>
 
-
+  <div v-if="modalIndex" class="modal" @click="closeModal">
+      <div class="modal-content" @click.stop >
+        <span class="close" @click="closeModal">&times;</span>
+        <div class="modal-body">
+          <h1>PORTFOLIO EN DESARROLLO</h1>
+        </div>
+      </div>
+  </div>
   <header data-aos="zoom-out-right">
     <div class="wrappa">
 

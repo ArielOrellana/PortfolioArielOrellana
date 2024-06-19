@@ -14,7 +14,7 @@
                 <button class="nav-button prev" @click="prevCard">&#9664;</button>
                 <div class="modal-body" :key="modalKey">
                     <h2>{{ selectedCard.titulo }}</h2>
-                    <img :src="selectedCard.img" :alt="selectedCard.titulo" class="modal-image">
+                    <img :src="'/PortfolioArielOrellana'+ selectedCard.img" :alt="selectedCard.titulo" class="modal-image">
                     <p>{{ selectedCard.descripccion }}</p>
                 </div>
                 <button class="nav-button next" @click="nextCard">&#9654;</button>
