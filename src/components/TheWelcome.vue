@@ -8,11 +8,19 @@
   </div>
 </template>
 <style>
+.about{
+  text-shadow:
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000;
+}
 @media (min-width: 1024px) {
   .about {
     min-height: 400px;
     display: flex;
     align-items: center;
+
   }
 }
 </style>

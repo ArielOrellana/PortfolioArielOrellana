@@ -70,7 +70,7 @@
               empresa:'Proyecto T.Tec - Ministerio de trabajo, empleo y seguridad - UTN',
               inicio: '2021',
               fin: '2022',
-              descripccion:'• Niveles de conocimiento cognitivo.\n• Fundamentos de las pruebas.\n• Introducción al testing Ágil.\n• Las pruebas en ciclo de vida del software.\n• Técnicas de prueba.\n• Test Management.\n• Niveles de conocimiento cognitivo.\n• Fundamentos de las pruebas.\n• Introducción al testing Ágil.\n• Las pruebas en ciclo de vida del software.\n• Técnicas de prueba.\n• Test Management.\n\nAptitudes: Trabajo en equipo - QA/QC - Resolución de problemas - Investigación - Liderazgo de equipos - Aseguramiento de la calidad - Capacidad de análisis.',
+              descripccion:'• Niveles de conocimiento cognitivo.\n• Fundamentos de las pruebas.\n• Introducción al testing Ágil.\n• Las pruebas en ciclo de vida del software.\n• Técnicas de prueba.\n• Test Management.\n\nAptitudes: Trabajo en equipo - QA/QC - Resolución de problemas - Investigación - Liderazgo de equipos - Aseguramiento de la calidad - Capacidad de análisis.',
             },
             {
               titulo: 'Futuros Programadores',

@@ -135,12 +135,14 @@ body {
 }
 
 .modal-body {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 25px;
 }
 
 .modal-image {
   width: 90%;
-  margin-top: 40px;
   max-height: 300px;
   object-fit: cover;
   border-radius: 8px;
@@ -207,7 +209,28 @@ body {
   z-index: -2;
 	-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
+.boton-azul {
+  margin-top: 10px;
+  background-color: #01264e; /* Color azul */
+  color: rgb(202, 201, 201); /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Relleno (padding) */
+  font-size: 16px; /* Tamaño del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición para el efecto hover */
+}
 
+.boton-azul:hover {
+  background-color: #011b36; /* Color azul más oscuro al pasar el cursor */
+}
+
+.boton-azul:active {
+  background-color: #011b36; /* Color azul más oscuro al pasar el cursor */
+  box-shadow:  2px 2px 2px 2px #344961a2 ;
+  color: rgb(116, 116, 116); /* Color del texto */
+
+}
 @media (max-width: 600px) {
   .modal-content {
     width: 90%;

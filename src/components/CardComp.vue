@@ -16,6 +16,11 @@
                     <h2>{{ selectedCard.titulo }}</h2>
                     <img :src="'/PortfolioArielOrellana'+ selectedCard.img" :alt="selectedCard.titulo" class="modal-image">
                     <p>{{ selectedCard.descripccion }}</p>
+                    <div class="flex" v-if="selectedCard.repo || selectedCard.sitio">
+                        <a class="boton-azul ml-5" v-if="selectedCard.repo" :href="selectedCard.repo" target="_blank" >Repositorio <i class="fa-solid fa-code-branch"></i></a>
+                        <a class="boton-azul ml-5" v-if="selectedCard.sitio" :href="selectedCard.sitio" target="_blank" >Ir al sitio <i class="fa-solid fa-link"></i></a>
+                        <a class="boton-azul ml-5" v-if="selectedCard.apk" :href="selectedCard.apk" target="_blank" >Descargar APK <i class="fa-brands fa-android"></i></a>
+                    </div>
                 </div>
                 <button class="nav-button next" @click="nextCard">&#9654;</button>
             </div>
@@ -127,7 +132,14 @@ p{
   opacity: 0;
   transform: scale(0.9);
 }
-
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ml-5{
+    margin-left: 5px;
+}
 @media (max-width: 600px) {
   .grid-container {
       display: flex;

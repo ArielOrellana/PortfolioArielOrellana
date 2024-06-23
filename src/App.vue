@@ -22,7 +22,7 @@ export default{
   data(){
     return{
       url:'/PortfolioArielOrellana',
-      modalIndex: 1,
+      modalIndex: null,
     }
   }
 
@@ -126,28 +126,7 @@ nav a:first-of-type {
 .rutas{
   margin-top: 20px;
 }
-.boton-azul {
-    margin-top: 10px;
-    background-color: #01264e; /* Color azul */
-    color: rgb(202, 201, 201); /* Color del texto */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Relleno (padding) */
-    font-size: 16px; /* Tamaño del texto */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    transition: background-color 0.3s; /* Transición para el efecto hover */
-}
 
-.boton-azul:hover {
-    background-color: #011b36; /* Color azul más oscuro al pasar el cursor */
-}
-
-.boton-azul:active {
-    background-color: #011b36; /* Color azul más oscuro al pasar el cursor */
-    box-shadow:  2px 2px 2px 2px #344961a2 ;
-    color: rgb(116, 116, 116); /* Color del texto */
-
-}
 
 @media (min-width: 1024px) {
   header {
