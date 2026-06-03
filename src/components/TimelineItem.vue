@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
   item: { type: Object, required: true },
 })
@@ -10,10 +10,10 @@ defineProps({
     <div class="timeline-content">
       <div class="timeline-meta">
         <span class="timeline-date">{{ item.inicio }} — {{ item.fin }}</span>
-        <span class="timeline-company" v-if="item.empresa">{{ item.empresa }}</span>
+        <span v-if="item.empresa" class="timeline-company">{{ item.empresa }}</span>
       </div>
       <h3 class="timeline-title">{{ item.titulo }}</h3>
-      <p class="timeline-desc" v-if="item.descripccion">{{ item.descripccion }}</p>
+      <p v-if="item.descripcion" class="timeline-desc">{{ item.descripcion }}</p>
     </div>
   </div>
 </template>
@@ -44,7 +44,9 @@ defineProps({
   box-shadow: 0 0 0 2px var(--primary);
   margin-top: 4px;
 }
-.timeline-content { flex: 1; }
+.timeline-content {
+  flex: 1;
+}
 .timeline-meta {
   display: flex;
   flex-wrap: wrap;

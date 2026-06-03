@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import SocialLinks from './SocialLinks.vue'
 import { useTheme } from '../composables/useTheme.js'
@@ -29,29 +29,48 @@ const navItems = [
       <div class="header-actions">
         <button
           class="hamburger"
-          @click="emit('toggle-menu')"
           :aria-label="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
           :aria-expanded="menuOpen"
+          @click="emit('toggle-menu')"
         >
           <span v-for="i in 3" :key="i" class="hamburger-line" :class="{ open: menuOpen }" />
         </button>
       </div>
 
       <nav class="nav-desktop" aria-label="Navegación">
-        <RouterLink v-for="item in navItems" :key="item.path" :to="item.path" class="nav-link">{{ item.label }}</RouterLink>
-        <button class="theme-btn" @click="toggle" :aria-label="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'" :title="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'">
-          <i v-if="theme === 'dark'" class="fa-solid fa-sun"></i>
-          <i v-else class="fa-solid fa-moon"></i>
+        <RouterLink v-for="item in navItems" :key="item.path" :to="item.path" class="nav-link">{{
+          item.label
+        }}</RouterLink>
+        <button
+          class="theme-btn"
+          :aria-label="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'"
+          :title="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'"
+          @click="toggle"
+        >
+          <i v-if="theme === 'dark'" class="fa-solid fa-sun" aria-hidden="true"></i>
+          <i v-else class="fa-solid fa-moon" aria-hidden="true"></i>
         </button>
       </nav>
     </div>
 
     <nav class="nav-mobile" :class="{ visible: menuOpen }" aria-label="Navegación móvil">
-      <RouterLink v-for="item in navItems" :key="item.path" :to="item.path" class="nav-link" @click="emit('toggle-menu')">{{ item.label }}</RouterLink>
+      <RouterLink
+        v-for="item in navItems"
+        :key="item.path"
+        :to="item.path"
+        class="nav-link"
+        @click="emit('toggle-menu')"
+        >{{ item.label }}</RouterLink
+      >
       <SocialLinks />
-      <button class="theme-btn mobile-theme" @click="toggle" :aria-label="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'" :title="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'">
-        <i v-if="theme === 'dark'" class="fa-solid fa-sun"></i>
-        <i v-else class="fa-solid fa-moon"></i>
+      <button
+        class="theme-btn mobile-theme"
+        :aria-label="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'"
+        :title="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'"
+        @click="toggle"
+      >
+        <i v-if="theme === 'dark'" class="fa-solid fa-sun" aria-hidden="true"></i>
+        <i v-else class="fa-solid fa-moon" aria-hidden="true"></i>
         <span>{{ theme === 'dark' ? 'Modo claro' : 'Modo oscuro' }}</span>
       </button>
     </nav>
@@ -84,12 +103,21 @@ const navItems = [
   font-weight: 600;
   font-size: 1rem;
 }
-.brand:hover { color: var(--text-heading); }
-.avatar { border-radius: 50%; object-fit: cover; }
-.brand-name { display: none; }
+.brand:hover {
+  color: var(--text-heading);
+}
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.brand-name {
+  display: none;
+}
 
 @media (min-width: 500px) {
-  .brand-name { display: inline; }
+  .brand-name {
+    display: inline;
+  }
 }
 
 .header-actions {
@@ -106,14 +134,24 @@ const navItems = [
   color: var(--text);
   padding: 6px 8px;
   border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
 }
-.theme-btn:hover { background: rgba(85, 85, 238, 0.1); color: var(--primary); }
-.mobile-theme { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
-.mobile-theme span { font-size: 0.95rem; }
+.theme-btn:hover {
+  background: rgba(85, 85, 238, 0.1);
+  color: var(--primary);
+}
+.mobile-theme {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+}
+.mobile-theme span {
+  font-size: 0.95rem;
+}
 
 .hamburger {
   display: flex;
@@ -130,20 +168,32 @@ const navItems = [
   height: 2px;
   background: var(--text);
   border-radius: 2px;
-  transition: transform 0.3s, opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
 }
-.hamburger-line.open:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger-line.open:nth-child(2) { opacity: 0; }
-.hamburger-line.open:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.hamburger-line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 
-.nav-desktop { display: none; }
+.nav-desktop {
+  display: none;
+}
 .nav-mobile {
   display: flex;
   flex-direction: column;
   gap: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
   padding: 0 1rem;
 }
 .nav-mobile.visible {
@@ -155,15 +205,20 @@ const navItems = [
   border-radius: 8px;
   color: var(--text);
   font-size: 0.95rem;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
-.nav-link:hover, .nav-link.router-link-exact-active {
+.nav-link:hover,
+.nav-link.router-link-exact-active {
   background: rgba(85, 85, 238, 0.12);
   color: var(--primary);
 }
 
 @media (min-width: 768px) {
-  .hamburger { display: none; }
+  .hamburger {
+    display: none;
+  }
   .nav-desktop {
     display: flex;
     align-items: center;
@@ -173,6 +228,8 @@ const navItems = [
     padding: 0.4rem 0.7rem;
     font-size: 0.85rem;
   }
-  .nav-mobile { display: none; }
+  .nav-mobile {
+    display: none;
+  }
 }
 </style>

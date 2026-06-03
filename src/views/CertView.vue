@@ -1,27 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
+import type { Certificate } from '../types'
+import certificates from '../data/certificates.json'
 
-const certificates = ref([
-  { id: 1, img: "/certificados/c14.png", titulo:"PHP Orientado a Objetos - Traits" },
-  { id: 2, img: "/certificados/c13.png", titulo:"PHP Orientado a Objetos - Herencia" },
-  { id: 3, img: "/certificados/c12.png", titulo:"PHP Orientado a Objetos" },
-  { id: 4, img: "/certificados/c11.png", titulo:"PHP Nuevas Características" },
-  { id: 5, img: "/certificados/c9-1.png", titulo:"Futuros Programadores" },
-  { id: 6, img: "/certificados/c8-1.png", titulo:"React Native" },
-  { id: 7, img: "/certificados/c7.jpg", titulo:"PHP Course - SoloLearn" },
-  { id: 8, img: "/certificados/c6.jfif", titulo:"Bootcamp QA/QC" },
-  { id: 9, img: "/certificados/c5-1.png", titulo:"#SeProgramar - Argentina Programa" },
-  { id: 10, img: "/certificados/c4.jpg", titulo:"HTML Course - SoloLearn" },
-  { id: 11, img: "/certificados/c3-1.png", titulo:"Introducción a Flutter" },
-  { id: 12, img: "/certificados/c2-1.png", titulo:"Dart Profesional" },
-  { id: 13, img: "/certificados/c10.png", titulo:"Introducción a la Programación" },
-  { id: 14, img: "/certificados/c1-1.png", titulo:"Introducción a CNC" },
-])
+const selected = ref<Certificate | null>(null)
 
-const selected = ref(null)
-
-function openCert(cert) { selected.value = cert; document.body.style.overflow = 'hidden' }
-function closeCert() { selected.value = null; document.body.style.overflow = '' }
+function openCert(cert: Certificate) {
+  selected.value = cert
+  document.body.style.overflow = 'hidden'
+}
+function closeCert() {
+  selected.value = null
+  document.body.style.overflow = ''
+}
 </script>
 
 <template>
@@ -29,7 +20,13 @@ function closeCert() { selected.value = null; document.body.style.overflow = '' 
     <h2 class="section-title">Certificados</h2>
     <p class="section-sub">Mis certificaciones y cursos realizados</p>
     <div class="grid">
-      <button v-for="cert in certificates" :key="cert.id" class="cert" @click="openCert(cert)" :aria-label="'Ver certificado: ' + cert.titulo">
+      <button
+        v-for="cert in certificates"
+        :key="cert.id"
+        class="cert"
+        :aria-label="'Ver certificado: ' + cert.titulo"
+        @click="openCert(cert)"
+      >
         <img :src="'/PortfolioArielOrellana' + cert.img" :alt="cert.titulo" loading="lazy" />
         <div class="cert-overlay">
           <span>{{ cert.titulo }}</span>
@@ -38,10 +35,19 @@ function closeCert() { selected.value = null; document.body.style.overflow = '' 
     </div>
 
     <Teleport to="body">
-      <div v-if="selected" class="modal-overlay" @click.self="closeCert" @keydown.escape="closeCert">
+      <div
+        v-if="selected"
+        class="modal-overlay"
+        @click.self="closeCert"
+        @keydown.escape="closeCert"
+      >
         <div class="modal-box">
-          <button class="modal-close" @click="closeCert" aria-label="Cerrar">&times;</button>
-          <img :src="'/PortfolioArielOrellana' + selected.img" :alt="selected.titulo" class="modal-img" />
+          <button class="modal-close" aria-label="Cerrar" @click="closeCert">&times;</button>
+          <img
+            :src="'/PortfolioArielOrellana' + selected.img"
+            :alt="selected.titulo"
+            class="modal-img"
+          />
           <p class="modal-label">{{ selected.titulo }}</p>
         </div>
       </div>
@@ -70,28 +76,57 @@ function closeCert() { selected.value = null; document.body.style.overflow = '' 
   padding: 0;
   cursor: pointer;
   aspect-ratio: 4/3;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.cert:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
-.cert:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-.cert img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cert:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.cert:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.cert img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .cert-overlay {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
   padding: 0.75rem;
 }
-.cert-overlay span { color: #fff; font-size: 0.8rem; font-weight: 500; }
+.cert-overlay span {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
 
 .modal-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex; align-items: center; justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
   padding: 1rem;
   animation: fadeIn 0.2s ease;
 }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .modal-box {
   position: relative;
   max-width: 700px;
@@ -102,18 +137,32 @@ function closeCert() { selected.value = null; document.body.style.overflow = '' 
   overflow: hidden;
   animation: scaleIn 0.25s ease;
 }
-@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .modal-close {
   position: absolute;
-  top: 0.5rem; right: 0.75rem;
+  top: 0.5rem;
+  right: 0.75rem;
   font-size: 2rem;
-  background: none; border: none;
+  background: none;
+  border: none;
   color: #fff;
   cursor: pointer;
   z-index: 2;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
-.modal-img { width: 100%; display: block; }
+.modal-img {
+  width: 100%;
+  display: block;
+}
 .modal-label {
   padding: 1rem;
   text-align: center;

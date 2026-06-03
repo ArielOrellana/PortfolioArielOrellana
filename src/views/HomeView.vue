@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import SocialLinks from '../components/SocialLinks.vue'
 
 const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.meta.url).href
@@ -11,11 +11,17 @@ const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.
         <span class="hero-badge">Desarrollador Full Stack</span>
         <h1 class="hero-name">Ariel E. Orellana</h1>
         <p class="hero-desc">
-          Soy desarrollador web Full Stack con <strong>más de 4 años de experiencia</strong> creando y manteniendo sistemas web escalables. Actualmente soy <strong>Líder Técnico en Genube</strong> y <strong>Full Stack Developer en Seeker Parking</strong>, especializado en <strong>PHP, Laravel, React y React Native</strong>. He liderado equipos de desarrollo, implementado microservicios, desarrollado apps móviles y migrado plataformas legacy a tecnologías modernas con Docker.
+          Soy desarrollador web Full Stack con <strong>más de 4 años de experiencia</strong> creando
+          y manteniendo sistemas web escalables. Actualmente soy
+          <strong>Líder Técnico en Genube</strong> y
+          <strong>Full Stack Developer en Seeker Parking</strong>, especializado en
+          <strong>PHP, Laravel, React y React Native</strong>. He liderado equipos de desarrollo,
+          implementado microservicios, desarrollado apps móviles y migrado plataformas legacy a
+          tecnologías modernas con Docker.
         </p>
         <div class="hero-actions">
           <a :href="cvUrl" target="_blank" class="boton">
-            <i class="fa-solid fa-download"></i> Descargar CV
+            <i class="fa-solid fa-download" aria-hidden="true"></i> Descargar CV
           </a>
           <SocialLinks compact />
         </div>
@@ -43,7 +49,9 @@ const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.
   text-align: center;
   max-width: 900px;
 }
-.hero-text { flex: 1; }
+.hero-text {
+  flex: 1;
+}
 .hero-badge {
   display: inline-block;
   font-size: 0.8rem;
@@ -70,7 +78,9 @@ const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.
   max-width: 550px;
   margin: 0 auto 1.5rem;
 }
-.hero-desc strong { color: var(--text); }
+.hero-desc strong {
+  color: var(--text);
+}
 .hero-actions {
   display: flex;
   align-items: center;
@@ -92,9 +102,18 @@ const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.
     flex-direction: row;
     text-align: left;
   }
-  .hero-actions { justify-content: flex-start; }
-  .hero-desc { margin: 0 0 1.5rem; }
-  .hero-name { font-size: 2.8rem; }
-  .profile-img { width: 260px; height: 260px; }
+  .hero-actions {
+    justify-content: flex-start;
+  }
+  .hero-desc {
+    margin: 0 0 1.5rem;
+  }
+  .hero-name {
+    font-size: 2.8rem;
+  }
+  .profile-img {
+    width: 260px;
+    height: 260px;
+  }
 }
 </style>

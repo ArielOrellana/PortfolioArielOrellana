@@ -1,0 +1,16 @@
+[
+  { "id": 1, "img": "/certificados/c14.png", "titulo": "PHP Orientado a Objetos - Traits" },
+  { "id": 2, "img": "/certificados/c13.png", "titulo": "PHP Orientado a Objetos - Herencia" },
+  { "id": 3, "img": "/certificados/c12.png", "titulo": "PHP Orientado a Objetos" },
+  { "id": 4, "img": "/certificados/c11.png", "titulo": "PHP Nuevas Características" },
+  { "id": 5, "img": "/certificados/c9-1.png", "titulo": "Futuros Programadores" },
+  { "id": 6, "img": "/certificados/c8-1.png", "titulo": "React Native" },
+  { "id": 7, "img": "/certificados/c7.jpg", "titulo": "PHP Course - SoloLearn" },
+  { "id": 8, "img": "/certificados/c6.jfif", "titulo": "Bootcamp QA/QC" },
+  { "id": 9, "img": "/certificados/c5-1.png", "titulo": "#SeProgramar - Argentina Programa" },
+  { "id": 10, "img": "/certificados/c4.jpg", "titulo": "HTML Course - SoloLearn" },
+  { "id": 11, "img": "/certificados/c3-1.png", "titulo": "Introducción a Flutter" },
+  { "id": 12, "img": "/certificados/c2-1.png", "titulo": "Dart Profesional" },
+  { "id": 13, "img": "/certificados/c10.png", "titulo": "Introducción a la Programación" },
+  { "id": 14, "img": "/certificados/c1-1.png", "titulo": "Introducción a CNC" }
+]

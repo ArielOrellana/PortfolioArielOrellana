@@ -8,7 +8,7 @@ function initTheme() {
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
 }
 
-function applyTheme(val) {
+function applyTheme(val: string) {
   document.documentElement.setAttribute('data-theme', val)
   localStorage.setItem('theme', val)
 }

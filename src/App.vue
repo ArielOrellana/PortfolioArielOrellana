@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
@@ -12,7 +12,7 @@ function toggleMenu() {
 
 <template>
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
-  <AppHeader :menuOpen="menuOpen" @toggle-menu="toggleMenu" />
+  <AppHeader :menu-open="menuOpen" @toggle-menu="toggleMenu" />
   <main id="main-content" class="main">
     <router-view v-slot="{ Component, route }">
       <transition name="page" mode="out-in">
@@ -45,10 +45,18 @@ function toggleMenu() {
 }
 
 @media (min-width: 768px) {
-  .main { padding: 2rem; }
+  .main {
+    padding: 2rem;
+  }
 }
 
-.bg-shapes { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.bg-shapes {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
 .dev-icon {
   position: absolute;
   top: 50%;
@@ -56,7 +64,13 @@ function toggleMenu() {
   font-size: 36px;
   opacity: 0.15;
 }
-.type-1 { color: var(--primary); }
-.type-2 { color: #1cd99d; }
-.type-3 { color: #8855ee; }
+.type-1 {
+  color: var(--primary);
+}
+.type-2 {
+  color: #1cd99d;
+}
+.type-3 {
+  color: #8855ee;
+}
 </style>
