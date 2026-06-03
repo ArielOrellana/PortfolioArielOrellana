@@ -1,52 +1,23 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import ContactView from '../views/ContactView.vue'
-import CertView from '../views/CertView.vue'
-import EstView from '../views/EstView.vue'
-import HabView from '../views/HabView.vue'
-import PortfolioView from '../views/PortfolioView.vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
+
+const routes = [
+  { path: '/', name: 'home', component: () => import('../views/HomeView.vue'), meta: { title: 'Inicio' } },
+  { path: '/portfolio', name: 'portfolio', component: () => import('../views/PortfolioView.vue'), meta: { title: 'Portfolio' } },
+  { path: '/experiencia', name: 'experiencia', component: () => import('../views/ExpView.vue'), meta: { title: 'Experiencia' } },
+  { path: '/estudios', name: 'estudios', component: () => import('../views/EstView.vue'), meta: { title: 'Estudios' } },
+  { path: '/habilidades', name: 'habilidades', component: () => import('../views/HabView.vue'), meta: { title: 'Habilidades' } },
+  { path: '/certificados', name: 'certificados', component: () => import('../views/CertView.vue'), meta: { title: 'Certificados' } },
+  { path: '/contacto', name: 'contacto', component: () => import('../views/ContactView.vue'), meta: { title: 'Contacto' } },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('../views/NotFoundView.vue'), meta: { title: '404' } },
+]
+
 const router = createRouter({
-  history: createWebHistory('#'),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/experiencia',
-      name: 'experiencia',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ExpView.vue')
-    },
-    {
-      path: '/habilidades',
-      name: 'habilidades',
-      component: HabView
-    },
-    {
-      path: '/estudios',
-      name: 'estudios',
-      component: EstView
-    },
-    {
-      path: '/certificados',
-      name: 'certificados',
-      component: CertView
-    },
-    {
-      path: '/contacto',
-      name: 'contacto',
-      component: ContactView
-    },
-    {
-      path: '/portfolio',
-      name: 'portfolio',
-      component: PortfolioView
-    },
-  ]
+  history: createWebHashHistory(),
+  routes,
+})
+
+router.afterEach((to) => {
+  document.title = to.meta.title ? `Ariel Orellana · ${to.meta.title}` : 'Ariel Orellana'
 })
 
 export default router

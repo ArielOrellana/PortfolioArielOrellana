@@ -1,36 +1,75 @@
+<script setup>
+</script>
+
 <template>
-    <div class="center">
-        <div class="contact">
-            <h1><a href="https://www.linkedin.com/in/orellanaariel1998/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></h1>
-            <h1><a href="https://github.com/ArielOrellana" target="_blank"><i class="fa-brands fa-github"></i></a></h1>
-            <h1><a href="https://gitlab.com/OrellanaAriel1998" target="_blank"><i class="fa-brands fa-gitlab"></i></a></h1>
-            <h1><router-link :to="{name: 'home'}"><i class="fa-solid fa-globe"></i></router-link></h1>
-            <h1><a href="mailto:orellanaariel1998@gmail.com"><i class="fa-solid fa-envelope"></i></a></h1>
-            <h1><a href="https://www.instagram.com/patu.hard/" target="_blank"><i class="fa-brands fa-instagram"></i></a></h1>       
-            <h2>orellanaariel1998@gmail.com</h2>
-        </div>
+  <section class="contact">
+    <h2 class="section-title">Contacto</h2>
+    <p class="contact-desc">Podés contactarme a través de cualquiera de estos medios</p>
+    <div class="contact-grid">
+      <a href="https://www.linkedin.com/in/orellanaariel1998/" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/ArielOrellana" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="https://gitlab.com/OrellanaAriel1998" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <i class="fa-brands fa-gitlab"></i>
+        <span>GitLab</span>
+      </a>
+      <a href="mailto:orellanaariel1998@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+      <a href="https://www.instagram.com/patu.hard/" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+      <div class="contact-card email-card">
+        <i class="fa-solid fa-at"></i>
+        <span>orellanaariel1998@gmail.com</span>
+      </div>
     </div>
+  </section>
 </template>
-<style>
-.contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+<style scoped>
+.contact { text-align: center; }
+.contact-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
 }
-/*junio 18360 examen 14300*/
-@media (min-width: 1024px) {
-    .contact{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(50px, 0.1fr));
-        gap: 5px;
-        padding: 2px;
-        max-width: 60%;
-    }
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 1.5rem;
+  transition: transform 0.25s ease, border-color 0.25s, box-shadow 0.25s;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  color: var(--text);
+}
+.contact-card span { font-size: 0.85rem; color: var(--text-muted); }
+.contact-card:hover span { color: var(--text); }
+.email-card { grid-column: 1 / -1; flex-direction: row; justify-content: center; }
+.email-card span { font-size: 0.9rem; color: var(--primary); }
 </style>

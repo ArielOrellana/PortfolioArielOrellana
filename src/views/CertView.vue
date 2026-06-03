@@ -1,99 +1,123 @@
-<template>
-    <div class="grid-container">
-        <CardComp :cards="portfolioArray" />
-    </div>
-</template>
-<script>
-    import CardComp from '../components/CardComp.vue'
-    export default {
-        components:{
-            CardComp
-        },
-        data(){
-            return{
-                portfolioArray:[
-                    {
-                        id: 1,
-                        img: "/certificados/c14.png",
-                        titulo:"PHP Orientado a objetos - Traits",
-                    },
-                    {
-                        id: 2,
-                        img: "/certificados/c13.png",
-                        titulo:"PHP Orientado a objetos - Herencia",
-                    },
-                    {
-                        id: 3,
-                        img: "/certificados/c12.png",
-                        titulo:"PHP Orientado a objetos",
-                    },
-                    {
-                        id: 4,
-                        img: "/certificados/c11.png",
-                        titulo:"PHP nuevas características",
-                    },
-                    {
-                        id: 5,
-                        img: "/certificados/c9-1.png",
-                        descripccion:'• Programación Orientada a Objetos.\n• Modelo Vista Controlador.\n• Maquetación HTML, CSS.\n• JavaScript Básico.\n• Framework Laravel.\n• PHP Intermedio.\n• Desarrollo web E-commerce.\n\nAptitudes: PHP vanilla - POO - MVC - MySQL -Laravel - HTML - JS - CSS - Bootstrap',
-                        titulo:"Futuros Programadores",
-                    },
-                    {
-                        id: 6,
-                        img: "/certificados/c8-1.png",
-                        descripccion:"",
-                        titulo:"Curso de React Native",
-                    },
-                    {
-                        id: 7,
-                        img: "/certificados/c7.jpg",
-                        descripccion:"",
-                        titulo:"Course PHP",
-                    },
-                    {
-                        id: 8,
-                        img: "/certificados/c6.jfif",
-                        descripccion:'• Fundamentos de las pruebas.\n• Técnicas de prueba.\n• Test Management.\n• Introducción al testing Ágil.\n• Las pruebas en ciclo de vida del software.\n\nAptitudes: Trabajo en equipo - QA/QC - Resolución de problemas - Investigación - Liderazgo de equipos - Aseguramiento de la calidad - Capacidad de análisis.',
-                        titulo:"bootcamp QA/QC",
-                    },
-                    {
-                        id: 9,
-                        img: "/certificados/c5-1.png",
-                        descripccion:'• Estructuras de datos.\n• JavaScript básico.\n• Programación Orientada a Objetos con Ruby.\n\nAptitudes: Ruby · JavaScript · Goobstone',
-                        titulo:"#Se Programar",
-                    },
-                    {
-                        id: 10,
-                        img: "/certificados/c4.jpg",
-                        descripccion:"",
-                        titulo:"Course HTML",
-                    },
-                    {
-                        id: 11,
-                        img: "/certificados/c3-1.png",
-                        descripccion:"",
-                        titulo:"Curso de introduccion a Flutter",
-                    },
-                    {
-                        id: 12,
-                        img: "/certificados/c2-1.png",
-                        descripccion:"",
-                        titulo:"Curso profesional de Dart",
-                    },
-                    {
-                        id: 13,
-                        img: "/certificados/c10.png",
-                        descripccion:"",
-                        titulo:"Introducción a la Programación",
-                    },
-                    {
-                        id: 14,
-                        img: "/certificados/c1-1.png",
-                        descripccion:"",
-                        titulo:"Introducción a CNC",
-                    },
-                ]
-            }
-        }
-    }
+<script setup>
+import { ref } from 'vue'
+
+const certificates = ref([
+  { id: 1, img: "/certificados/c14.png", titulo:"PHP Orientado a Objetos - Traits" },
+  { id: 2, img: "/certificados/c13.png", titulo:"PHP Orientado a Objetos - Herencia" },
+  { id: 3, img: "/certificados/c12.png", titulo:"PHP Orientado a Objetos" },
+  { id: 4, img: "/certificados/c11.png", titulo:"PHP Nuevas Características" },
+  { id: 5, img: "/certificados/c9-1.png", titulo:"Futuros Programadores" },
+  { id: 6, img: "/certificados/c8-1.png", titulo:"React Native" },
+  { id: 7, img: "/certificados/c7.jpg", titulo:"PHP Course - SoloLearn" },
+  { id: 8, img: "/certificados/c6.jfif", titulo:"Bootcamp QA/QC" },
+  { id: 9, img: "/certificados/c5-1.png", titulo:"#SeProgramar - Argentina Programa" },
+  { id: 10, img: "/certificados/c4.jpg", titulo:"HTML Course - SoloLearn" },
+  { id: 11, img: "/certificados/c3-1.png", titulo:"Introducción a Flutter" },
+  { id: 12, img: "/certificados/c2-1.png", titulo:"Dart Profesional" },
+  { id: 13, img: "/certificados/c10.png", titulo:"Introducción a la Programación" },
+  { id: 14, img: "/certificados/c1-1.png", titulo:"Introducción a CNC" },
+])
+
+const selected = ref(null)
+
+function openCert(cert) { selected.value = cert; document.body.style.overflow = 'hidden' }
+function closeCert() { selected.value = null; document.body.style.overflow = '' }
 </script>
+
+<template>
+  <section>
+    <h2 class="section-title">Certificados</h2>
+    <p class="section-sub">Mis certificaciones y cursos realizados</p>
+    <div class="grid">
+      <button v-for="cert in certificates" :key="cert.id" class="cert" @click="openCert(cert)" :aria-label="'Ver certificado: ' + cert.titulo">
+        <img :src="'/PortfolioArielOrellana' + cert.img" :alt="cert.titulo" loading="lazy" />
+        <div class="cert-overlay">
+          <span>{{ cert.titulo }}</span>
+        </div>
+      </button>
+    </div>
+
+    <Teleport to="body">
+      <div v-if="selected" class="modal-overlay" @click.self="closeCert" @keydown.escape="closeCert">
+        <div class="modal-box">
+          <button class="modal-close" @click="closeCert" aria-label="Cerrar">&times;</button>
+          <img :src="'/PortfolioArielOrellana' + selected.img" :alt="selected.titulo" class="modal-img" />
+          <p class="modal-label">{{ selected.titulo }}</p>
+        </div>
+      </div>
+    </Teleport>
+  </section>
+</template>
+
+<style scoped>
+.section-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  margin-top: -0.5rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.cert {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cert:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.cert:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.cert img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cert-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  padding: 0.75rem;
+}
+.cert-overlay span { color: #fff; font-size: 0.8rem; font-weight: 500; }
+
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.modal-box {
+  position: relative;
+  max-width: 700px;
+  max-height: 90vh;
+  width: 100%;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  animation: scaleIn 0.25s ease;
+}
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+.modal-close {
+  position: absolute;
+  top: 0.5rem; right: 0.75rem;
+  font-size: 2rem;
+  background: none; border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.modal-img { width: 100%; display: block; }
+.modal-label {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-heading);
+  font-weight: 500;
+}
+</style>
