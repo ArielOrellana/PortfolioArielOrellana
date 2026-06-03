@@ -1,65 +1,64 @@
 [
   {
+    "id": 1,
     "titulo": "Tecnicatura Superior en Traductorado de Inglés",
     "empresa": "Instituto ANGLO",
     "inicio": "2023",
     "fin": "Actualidad"
   },
+  { "id": 2, "titulo": "PHP Labs", "empresa": "Código Facilito", "inicio": "2024", "fin": "2024" },
+  { "id": 3, "titulo": "PHP Course", "empresa": "SoloLearn", "inicio": "2022", "fin": "2022" },
   {
-    "titulo": "PHP Labs",
-    "empresa": "Código Facilito",
-    "inicio": "2024",
-    "fin": "2024"
-  },
-  {
-    "titulo": "PHP Course",
-    "empresa": "SoloLearn",
-    "inicio": "2022",
-    "fin": "2022"
-  },
-  {
+    "id": 4,
     "titulo": "Curso de React Native",
     "empresa": "Código Facilito",
     "inicio": "2022",
     "fin": "2022"
   },
   {
+    "id": 5,
     "titulo": "Curso de introducción a Flutter",
     "empresa": "Código Facilito",
     "inicio": "2022",
     "fin": "2022"
   },
   {
+    "id": 6,
     "titulo": "Curso profesional de Dart",
     "empresa": "Código Facilito",
     "inicio": "2022",
     "fin": "2022"
   },
   {
+    "id": 7,
     "titulo": "Argentina Programa · #SeProgramar",
     "empresa": "Ministerio de Desarrollo Productivo",
     "inicio": "2022",
     "fin": "2022"
   },
   {
+    "id": 8,
     "titulo": "QA/QC Tester",
     "empresa": "Proyecto T.Tec · UTN",
     "inicio": "2021",
     "fin": "2022"
   },
   {
+    "id": 9,
     "titulo": "Futuros Programadores",
     "empresa": "Sigmma.net · Fundación León",
     "inicio": "2018",
     "fin": "2019"
   },
   {
+    "id": 10,
     "titulo": "Introducción al Control Numérico por Computadora",
     "empresa": "Tenaris University",
     "inicio": "2017",
     "fin": "2018"
   },
   {
+    "id": 11,
     "titulo": "Técnico Electromecánico",
     "empresa": "Escuela Técnica Nº3 Dr. Juan B. Terán",
     "inicio": "2011",

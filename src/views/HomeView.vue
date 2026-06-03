@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import SocialLinks from '../components/SocialLinks.vue'
+import { getAssetUrl } from '../utils/assets'
 
-const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.meta.url).href
+const cvUrl = getAssetUrl('pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf')
 </script>
 
 <template>

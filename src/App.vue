@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
+import ErrorBoundary from './components/ErrorBoundary.vue'
 
 const menuOpen = ref(false)
 
@@ -14,11 +15,13 @@ function toggleMenu() {
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
   <AppHeader :menu-open="menuOpen" @toggle-menu="toggleMenu" />
   <main id="main-content" class="main">
-    <router-view v-slot="{ Component, route }">
-      <transition name="page" mode="out-in">
-        <component :is="Component" :key="route.path" />
-      </transition>
-    </router-view>
+    <ErrorBoundary>
+      <router-view v-slot="{ Component, route }">
+        <transition name="page" mode="out-in">
+          <component :is="Component" :key="route.path" />
+        </transition>
+      </router-view>
+    </ErrorBoundary>
   </main>
   <div class="bg-noise" aria-hidden="true"></div>
   <div class="bg-shapes" aria-hidden="true">

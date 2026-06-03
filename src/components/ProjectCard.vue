@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { getAssetUrl } from '../utils/assets'
+
 defineProps({
   card: { type: Object, required: true },
 })
@@ -6,12 +8,7 @@ defineProps({
 
 <template>
   <div class="card">
-    <img
-      :src="'/PortfolioArielOrellana' + card.img"
-      :alt="card.titulo"
-      class="card-img"
-      loading="lazy"
-    />
+    <img :src="getAssetUrl(card.img)" :alt="card.titulo" class="card-img" loading="lazy" />
     <div class="card-body">
       <h3 class="card-title">{{ card.titulo }}</h3>
       <p class="card-desc">{{ card.descripcion?.split('\n')[0] }}</p>

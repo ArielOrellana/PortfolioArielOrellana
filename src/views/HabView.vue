@@ -8,7 +8,7 @@ import skills from '../data/skills.json'
     <h2 class="section-title">Habilidades</h2>
     <p class="section-sub">Tecnologías y herramientas con las que trabajo</p>
     <div class="grid">
-      <SkillCard v-for="(skill, i) in skills" :key="i" :skill="skill" />
+      <SkillCard v-for="skill in skills" :key="skill.id" :skill="skill" />
     </div>
   </section>
 </template>

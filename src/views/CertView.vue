@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Certificate } from '../types'
+import { getAssetUrl } from '../utils/assets'
 import certificates from '../data/certificates.json'
 
 const selected = ref<Certificate | null>(null)
@@ -27,7 +28,7 @@ function closeCert() {
         :aria-label="'Ver certificado: ' + cert.titulo"
         @click="openCert(cert)"
       >
-        <img :src="'/PortfolioArielOrellana' + cert.img" :alt="cert.titulo" loading="lazy" />
+        <img :src="getAssetUrl(cert.img)" :alt="cert.titulo" loading="lazy" />
         <div class="cert-overlay">
           <span>{{ cert.titulo }}</span>
         </div>
@@ -43,11 +44,7 @@ function closeCert() {
       >
         <div class="modal-box">
           <button class="modal-close" aria-label="Cerrar" @click="closeCert">&times;</button>
-          <img
-            :src="'/PortfolioArielOrellana' + selected.img"
-            :alt="selected.titulo"
-            class="modal-img"
-          />
+          <img :src="getAssetUrl(selected.img)" :alt="selected.titulo" class="modal-img" />
           <p class="modal-label">{{ selected.titulo }}</p>
         </div>
       </div>

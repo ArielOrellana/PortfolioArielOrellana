@@ -7,7 +7,7 @@ import experiences from '../data/experiences.json'
   <section>
     <h2 class="section-title">Experiencia</h2>
     <div class="timeline">
-      <TimelineItem v-for="(item, i) in experiences" :key="i" :item="item" />
+      <TimelineItem v-for="item in experiences" :key="item.id" :item="item" />
     </div>
   </section>
 </template>
