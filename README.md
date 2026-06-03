@@ -1,29 +1,31 @@
-# PortfolioArielOrellana
+# Portfolio - Ariel E. Orellana
 
-This template should help get you started developing with Vue 3 in Vite.
+Portfolio personal desarrollado con Vue 3 + Vite. Incluye experiencia laboral, proyectos, habilidades y certificaciones.
 
-## Recommended IDE Setup
+## 🚀 Stack
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Framework:** Vue 3 (Composition API)
+- **Build:** Vite 5
+- **Routing:** Vue Router
+- **Estilos:** CSS custom properties (tema claro/oscuro)
+- **Iconos:** Font Awesome 6
 
-## Customize configuration
+## 👨‍💻 Experiencia
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+| Empresa | Rol | Período |
+|---|---|---|
+| **Seeker Parking** | Full Stack Developer | Jun 2025 — Actualidad |
+| **Genube** | Líder Técnico / Full Stack Developer | Jun 2022 — Actualidad |
+| **AF Soluciones Informáticas** | Full Stack Developer | May 2022 — Jul 2022 |
 
-## Project Setup
+## 🛠️ Tecnologías
+
+PHP, Laravel, React, React Native, JavaScript, jQuery, AngularJS, Backbone.js, CodeIgniter, Bootstrap, AdminLTE, Docker, MySQL
+
+## 📦 Desarrollo
 
 ```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
+npm install     # Instalar dependencias
+npm run dev     # Servidor de desarrollo
+npm run build   # Build producción
 ```

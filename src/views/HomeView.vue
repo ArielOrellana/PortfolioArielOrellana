@@ -11,7 +11,7 @@ const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.
         <span class="hero-badge">Desarrollador Full Stack</span>
         <h1 class="hero-name">Ariel E. Orellana</h1>
         <p class="hero-desc">
-          Soy desarrollador web Full Stack con <strong>2 años de experiencia</strong> en Genube. Especializado en <strong>PHP, Laravel y Vue.js</strong>, he trabajado en proyectos completos de front-end y back-end. También soy Técnico Electromecánico y brindo servicios técnicos de forma independiente.
+          Soy desarrollador web Full Stack con <strong>más de 4 años de experiencia</strong> creando y manteniendo sistemas web escalables. Actualmente soy <strong>Líder Técnico en Genube</strong> y <strong>Full Stack Developer en Seeker Parking</strong>, especializado en <strong>PHP, Laravel, React y React Native</strong>. He liderado equipos de desarrollo, implementado microservicios, desarrollado apps móviles y migrado plataformas legacy a tecnologías modernas con Docker.
         </p>
         <div class="hero-actions">
           <a :href="cvUrl" target="_blank" class="boton">

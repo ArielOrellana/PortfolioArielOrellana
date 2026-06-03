@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import ProjectCard from '../components/ProjectCard.vue'
 
 const projects = ref([
-  { id: 1, img: "/portfolio/genube.png", descripccion:"Desarrollo y mantenimiento de sistema de gestión para instituciones educativas Genube.\n\nAnálisis de requerimientos, soporte contable, implementación de microservicios, desarrollo móvil con React Native.\n\nAptitudes: PHP, Laravel, JQuery, AngularJS, React Native, Bootstrap, MySQL, Git", titulo:"Genube", sitio:"https://genube.com/", apk:"https://play.google.com/store/apps/details?id=com.genube.genubePadres" },
+  { id: 1, img: "/portfolio/genube.png", descripccion:"Sistema de gestión educativa multiplataforma con dashboard administrativo, sistema contable, app para padres y backend mobile.\n\nStack dashboard: PHP 5.6, jQuery, CSS/JS vanilla.\nStack contable: Laravel, AdminLTE, Bootstrap.\nStack app padres (web + mobile): Laravel, AngularJS 1.2, Bootstrap, React Native.\n\nArquitectura de microservicios, optimización de rendimiento.\n\nAptitudes: PHP, Laravel, jQuery, AngularJS, React Native, Bootstrap, AdminLTE, MySQL, Git", titulo:"Genube", sitio:"https://genube.com/", apk:"https://play.google.com/store/apps/details?id=com.genube.genubePadres" },
   { id: 2, img: "/portfolio/ferriplast.png", descripccion:"Desarrollo y mantenimiento de web E-commerce Ferriplast.\n\nAptitudes: Laravel, HTML, Bootstrap, JavaScript, Sass, MySQL, PHP", titulo:"Ferriplast", sitio:"https://ferriplast.com.ar/h/public/" },
   { id: 3, img: "/portfolio/funalsrl.png", descripccion:"Desarrollo y mantenimiento de web E-commerce Funal S.R.L.\n\nAptitudes: Laravel, HTML, Bootstrap, JavaScript, Sass, MySQL, PHP", titulo:"Funal S.R.L" },
   { id: 4, img: "/portfolio/agenda.png", descripccion:"Sistema de agenda de gastos con sumatorias y CRUD.\n\nAptitudes: Laravel, HTML, CSS, JavaScript, MySQL, Bootstrap, PHP", titulo:"Agenda", repo:"https://github.com/ArielOrellana/agenda" },
@@ -15,6 +15,7 @@ const projects = ref([
   { id: 10, img: "/portfolio/portfolio1.png", descripccion:"Migración de versión Laravel 5 a Laravel 8.", titulo:"E-commerce (Laravel upgrade)", repo:"https://github.com/ArielOrellana/ventas" },
   { id: 11, img: "/portfolio/portfolio 3.png", descripccion:"Ejercicios de estructuras de datos, diagramas de flujo y lógica con C++.\n\nAptitudes: C++, lógica de programación", titulo:"Ejercicios UTN", repo:"https://github.com/ArielOrellana/UTN-CPP-DFD" },
   { id: 12, img: "/portfolio/QA-test.png", descripccion:"Historias de usuario, tests manuales y pruebas de humo.\n\nAptitudes: QA/QC, Testing manual, Scrum", titulo:"QA Trello" },
+  { id: 13, img: "/portfolio/seeker.png", descripccion:"Desarrollo y mantenimiento de plataforma SaaS para gestión de estacionamientos inteligentes.\n\nMigración de sistema legacy (CodeIgniter 3 + Backbone.js) a stack moderno con Laravel + React + Docker. Desarrollo de dashboard administrativo y APIs REST.\n\nAptitudes: PHP, Laravel, React, CodeIgniter 3, Backbone.js, Bootstrap, Docker, MySQL, jQuery", titulo:"Seeker Parking", sitio:"https://seekerparking.com/" },
 ])
 </script>
 
