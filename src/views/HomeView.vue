@@ -1,5 +1,7 @@
 <script setup>
 import SocialLinks from '../components/SocialLinks.vue'
+
+const cvUrl = new URL('/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', import.meta.url).href
 </script>
 
 <template>
@@ -12,9 +14,9 @@ import SocialLinks from '../components/SocialLinks.vue'
           Soy desarrollador web Full Stack con <strong>2 años de experiencia</strong> en Genube. Especializado en <strong>PHP, Laravel y Vue.js</strong>, he trabajado en proyectos completos de front-end y back-end. También soy Técnico Electromecánico y brindo servicios técnicos de forma independiente.
         </p>
         <div class="hero-actions">
-          <button @click="window.open('/PortfolioArielOrellana/pdf/Curriculum-Ariel-Edgardo-Orellana-2024.pdf', '_blank')" class="boton">
+          <a :href="cvUrl" target="_blank" class="boton">
             <i class="fa-solid fa-download"></i> Descargar CV
-          </button>
+          </a>
           <SocialLinks compact />
         </div>
       </div>
@@ -24,10 +26,6 @@ import SocialLinks from '../components/SocialLinks.vue'
     </div>
   </section>
 </template>
-
-<script>
-export default { created() { this.window = window } }
-</script>
 
 <style scoped>
 .hero {

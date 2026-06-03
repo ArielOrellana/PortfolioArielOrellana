@@ -11,14 +11,16 @@ function toggleMenu() {
 </script>
 
 <template>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
   <AppHeader :menuOpen="menuOpen" @toggle-menu="toggleMenu" />
-  <main class="main">
+  <main id="main-content" class="main">
     <router-view v-slot="{ Component, route }">
       <transition name="page" mode="out-in">
         <component :is="Component" :key="route.path" />
       </transition>
     </router-view>
   </main>
+  <div class="bg-noise" aria-hidden="true"></div>
   <div class="bg-shapes" aria-hidden="true">
     <div class="shape square"></div>
     <div class="shape square"></div>
