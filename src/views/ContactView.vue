@@ -13,6 +13,7 @@
       >
         <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
         <span>LinkedIn</span>
+        <span class="sr-only">(se abre en nueva ventana)</span>
       </a>
       <a
         href="https://github.com/ArielOrellana"
@@ -22,6 +23,7 @@
       >
         <i class="fa-brands fa-github" aria-hidden="true"></i>
         <span>GitHub</span>
+        <span class="sr-only">(se abre en nueva ventana)</span>
       </a>
       <a
         href="https://gitlab.com/OrellanaAriel1998"
@@ -31,13 +33,9 @@
       >
         <i class="fa-brands fa-gitlab" aria-hidden="true"></i>
         <span>GitLab</span>
+        <span class="sr-only">(se abre en nueva ventana)</span>
       </a>
-      <a
-        href="mailto:orellanaariel1998@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-card"
-      >
+      <a href="mailto:orellanaariel1998@gmail.com" rel="noopener noreferrer" class="contact-card">
         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
         <span>Email</span>
       </a>
@@ -49,6 +47,7 @@
       >
         <i class="fa-brands fa-instagram" aria-hidden="true"></i>
         <span>Instagram</span>
+        <span class="sr-only">(se abre en nueva ventana)</span>
       </a>
       <div class="contact-card email-card">
         <i class="fa-solid fa-at" aria-hidden="true"></i>

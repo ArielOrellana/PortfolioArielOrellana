@@ -8,35 +8,31 @@ defineProps({ compact: Boolean })
       href="https://github.com/ArielOrellana"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="GitHub"
+      aria-label="GitHub (se abre en nueva ventana)"
       ><i class="fa-brands fa-github" aria-hidden="true"></i
     ></a>
     <a
       href="https://gitlab.com/OrellanaAriel1998"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="GitLab"
+      aria-label="GitLab (se abre en nueva ventana)"
       ><i class="fa-brands fa-gitlab" aria-hidden="true"></i
     ></a>
     <a
       href="https://www.linkedin.com/in/orellanaariel1998/"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="LinkedIn"
+      aria-label="LinkedIn (se abre en nueva ventana)"
       ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
     ></a>
-    <a
-      href="mailto:orellanaariel1998@gmail.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Email"
+    <a href="mailto:orellanaariel1998@gmail.com" aria-label="Email"
       ><i class="fa-solid fa-envelope" aria-hidden="true"></i
     ></a>
     <a
       href="https://www.instagram.com/patu.hard/"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Instagram"
+      aria-label="Instagram (se abre en nueva ventana)"
       ><i class="fa-brands fa-instagram" aria-hidden="true"></i
     ></a>
   </div>

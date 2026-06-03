@@ -20,7 +20,8 @@ defineProps({
           rel="noopener noreferrer"
           class="boton small"
           >Repo <i class="fa-solid fa-code-branch" aria-hidden="true"></i
-        ></a>
+          ><span class="sr-only">(se abre en nueva ventana)</span></a
+        >
         <a
           v-if="card.sitio"
           :href="card.sitio"
@@ -28,7 +29,8 @@ defineProps({
           rel="noopener noreferrer"
           class="boton small"
           >Sitio <i class="fa-solid fa-link" aria-hidden="true"></i
-        ></a>
+          ><span class="sr-only">(se abre en nueva ventana)</span></a
+        >
         <a
           v-if="card.apk"
           :href="card.apk"
@@ -36,7 +38,8 @@ defineProps({
           rel="noopener noreferrer"
           class="boton small"
           >APK <i class="fa-brands fa-android" aria-hidden="true"></i
-        ></a>
+          ><span class="sr-only">(se abre en nueva ventana)</span></a
+        >
       </div>
     </div>
   </div>

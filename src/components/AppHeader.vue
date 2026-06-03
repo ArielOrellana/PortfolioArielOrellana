@@ -53,7 +53,12 @@ const navItems = [
       </nav>
     </div>
 
-    <nav class="nav-mobile" :class="{ visible: menuOpen }" aria-label="Navegación móvil">
+    <nav
+      class="nav-mobile"
+      :class="{ visible: menuOpen }"
+      :inert="!menuOpen"
+      aria-label="Navegación móvil"
+    >
       <RouterLink
         v-for="item in navItems"
         :key="item.path"

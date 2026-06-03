@@ -6,9 +6,9 @@
   --border: rgba(255, 255, 255, 0.06);
   --text: #c8c8d4;
   --text-heading: #e8e8f0;
-  --text-muted: #787890;
-  --primary: #5555ee;
-  --primary-glow: rgba(85, 85, 238, 0.3);
+  --text-muted: #8a8aa2;
+  --primary: #7878f5;
+  --primary-glow: rgba(120, 120, 245, 0.3);
   --radius: 12px;
   --radius-lg: 16px;
 }
@@ -21,7 +21,7 @@
   --border: rgba(0, 0, 0, 0.08);
   --text: #3a3a4a;
   --text-heading: #1a1a2e;
-  --text-muted: #8888a0;
+  --text-muted: #6b6b85;
   --primary: #4444dd;
   --primary-glow: rgba(68, 68, 221, 0.2);
 }
@@ -64,6 +64,12 @@ a {
 a:hover {
   color: #7777ff;
 }
+.boton:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
 
 .skip-link {
   position: fixed;
@@ -82,6 +88,18 @@ a:hover {
   top: 0;
   outline: 2px solid var(--primary);
   outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 img {
