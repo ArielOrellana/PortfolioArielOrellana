@@ -22,15 +22,15 @@ function toggleMenu() {
   </main>
   <div class="bg-noise" aria-hidden="true"></div>
   <div class="bg-shapes" aria-hidden="true">
-    <div class="shape square"></div>
-    <div class="shape square"></div>
-    <div class="shape square"></div>
-    <div class="shape circle"></div>
-    <div class="shape circle"></div>
-    <div class="shape circle"></div>
-    <div class="shape triangle"></div>
-    <div class="shape triangle"></div>
-    <div class="shape triangle"></div>
+    <i class="fa-solid fa-laptop-code dev-icon type-1"></i>
+    <i class="fa-solid fa-terminal dev-icon type-1"></i>
+    <i class="fa-solid fa-code dev-icon type-1"></i>
+    <i class="fa-solid fa-database dev-icon type-2"></i>
+    <i class="fa-solid fa-server dev-icon type-2"></i>
+    <i class="fa-solid fa-microchip dev-icon type-2"></i>
+    <i class="fa-solid fa-bug dev-icon type-3"></i>
+    <i class="fa-solid fa-code-branch dev-icon type-3"></i>
+    <i class="fa-solid fa-cloud dev-icon type-3"></i>
   </div>
 </template>
 
@@ -49,18 +49,14 @@ function toggleMenu() {
 }
 
 .bg-shapes { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.shape {
+.dev-icon {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40px;
-  height: 40px;
+  font-size: 36px;
   opacity: 0.15;
 }
-.square { background: var(--primary); }
-.circle { background: #1cd99d; border-radius: 50%; }
-.triangle {
-  background: #8855ee;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
+.type-1 { color: var(--primary); }
+.type-2 { color: #1cd99d; }
+.type-3 { color: #8855ee; }
 </style>
