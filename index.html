@@ -1,18 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/PortfolioArielOrellana/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariel E. Orellana</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="module" crossorigin src="/PortfolioArielOrellana/assets/index-BA4yFwOr.js"></script>
-    <link rel="stylesheet" crossorigin href="/PortfolioArielOrellana/assets/index-DOZPkJPi.css">
+    <title>Ariel E. Orellana — Full Stack Developer | PHP, Laravel, React, Vue</title>
+    <meta
+      name="description"
+      content="Full Stack Developer en Tucumán, Argentina. Más de 4 años creando y modernizando sistemas web con PHP, Laravel, React, Vue y Docker. Descargá mi CV y contactame."
+    >
+    <meta name="author" content="Ariel E. Orellana">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://arielorellana.github.io/PortfolioArielOrellana/">
+    <link rel="icon" href="/PortfolioArielOrellana/logo.png">
+    <meta name="theme-color" content="#0a0a12" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)">
+
+    <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ariel E. Orellana">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:url" content="https://arielorellana.github.io/PortfolioArielOrellana/">
+    <meta property="og:title" content="Ariel E. Orellana — Full Stack Developer">
+    <meta
+      property="og:description"
+      content="+4 años desarrollando sistemas web en producción con PHP, Laravel, React, Vue y Docker. Experiencia migrando plataformas legacy a stacks modernos."
+    >
+    <meta
+      property="og:image"
+      content="https://arielorellana.github.io/PortfolioArielOrellana/og-ariel-orellana.png"
+    >
+    <meta property="og:image:alt" content="Ariel E. Orellana — Full Stack Developer">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ariel E. Orellana — Full Stack Developer">
+    <meta
+      name="twitter:description"
+      content="+4 años desarrollando sistemas web en producción con PHP, Laravel, React, Vue y Docker."
+    >
+    <meta
+      name="twitter:image"
+      content="https://arielorellana.github.io/PortfolioArielOrellana/og-ariel-orellana.png"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- SPA en GitHub Pages: decodifica /?/ruta → /ruta antes de arrancar Vue -->
+    <script>
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ariel Edgardo Orellana",
+        "alternateName": "Ariel E. Orellana",
+        "jobTitle": "Full Stack Developer",
+        "email": "mailto:orellanaariel1998@gmail.com",
+        "telephone": "+54-381-571-4627",
+        "url": "https://arielorellana.github.io/PortfolioArielOrellana/",
+        "image": "https://arielorellana.github.io/PortfolioArielOrellana/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Miguel de Tucumán",
+          "addressRegion": "Tucumán",
+          "addressCountry": "AR"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/orellanaariel1998/",
+          "https://github.com/ArielOrellana",
+          "https://gitlab.com/OrellanaAriel1998"
+        ],
+        "knowsAbout": [
+          "PHP",
+          "Laravel",
+          "MySQL",
+          "JavaScript",
+          "React",
+          "Vue.js",
+          "React Native",
+          "Docker",
+          "REST APIs",
+          "CodeIgniter"
+        ],
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidad Tecnológica Nacional — San Nicolás a Distancia"
+          },
+          {
+            "@type": "HighSchool",
+            "name": "Escuela Técnica Nº3 Dr. Juan B. Terán"
+          }
+        ],
+        "description": "Full Stack Developer con más de 4 años de experiencia en sistemas web en producción. Especializado en PHP, Laravel, React, Vue.js y Docker, con experiencia en migración de plataformas legacy, APIs REST y microservicios."
+      }
+    </script>
+    <script type="module" crossorigin src="/PortfolioArielOrellana/assets/index-BKEfbsFE.js"></script>
+    <link rel="stylesheet" crossorigin href="/PortfolioArielOrellana/assets/index-YHRtGCJe.css">
   </head>
   <body>
     <div id="app"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </body>
 </html>
