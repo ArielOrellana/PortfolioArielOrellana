@@ -5,6 +5,8 @@ description: Vite-specific import patterns and runtime features
 
 # Vite Features
 
+> Vite 8: TS/JSX transforms run on **Oxc** (`oxc` option, not `esbuild`), dep pre-bundling on **Rolldown**, and CSS minification on **Lightning CSS** by default. `esbuild`/`rollupOptions` still work as deprecated aliases.
+
 ## Glob Import
 
 Import multiple modules matching a pattern:
@@ -55,6 +57,13 @@ const svgRaw = import.meta.glob('./icons/*.svg', { query: '?raw', import: 'defau
 const svgUrls = import.meta.glob('./icons/*.svg', { query: '?url', import: 'default' })
 ```
 
+### Case-Insensitive Matching (Vite 8)
+
+```ts
+// matches Module.js, module.js, MODULE.js
+const modules = import.meta.glob('./dir/module*.js', { caseSensitive: false })
+```
+
 ## Asset Import Queries
 
 ### URL Import
@@ -79,8 +88,8 @@ import shaderCode from './shader.glsl?raw'
 ### Inline/No-Inline
 
 ```ts
-import inlined from './small.png?inline'    // Force base64 inline
-import notInlined from './large.png?no-inline'  // Force separate file
+import inlined from './small.png?inline' // Force base64 inline
+import notInlined from './large.png?no-inline' // Force separate file
 ```
 
 ### Web Workers
@@ -106,11 +115,11 @@ const worker = new Worker(new URL('./worker.ts', import.meta.url), {
 ### Built-in Constants
 
 ```ts
-import.meta.env.MODE      // 'development' | 'production' | custom
-import.meta.env.BASE_URL  // Base URL from config
-import.meta.env.PROD      // true in production
-import.meta.env.DEV       // true in development
-import.meta.env.SSR       // true when running in server
+import.meta.env.MODE // 'development' | 'production' | custom
+import.meta.env.BASE_URL // Base URL from config
+import.meta.env.PROD // true in production
+import.meta.env.DEV // true in development
+import.meta.env.SSR // true when running in server
 ```
 
 ### Custom Variables
@@ -125,7 +134,7 @@ DB_PASSWORD=secret  # NOT exposed to client
 
 ```ts
 console.log(import.meta.env.VITE_API_URL) // works
-console.log(import.meta.env.DB_PASSWORD)  // undefined
+console.log(import.meta.env.DB_PASSWORD) // undefined
 ```
 
 ### Mode-specific Files
@@ -154,7 +163,9 @@ interface ImportMeta {
 
 ```html
 <p>Running in %MODE%</p>
-<script>window.API = "%VITE_API_URL%"</script>
+<script>
+  window.API = '%VITE_API_URL%'
+</script>
 ```
 
 ## CSS Modules
@@ -177,7 +188,7 @@ import { myClass } from './component.module.css'
 
 ```ts
 import pkg from './package.json'
-import { version } from './package.json'  // Named import with tree-shaking
+import { version } from './package.json' // Named import with tree-shaking
 ```
 
 ## HMR API
@@ -187,14 +198,43 @@ if (import.meta.hot) {
   import.meta.hot.accept((newModule) => {
     // Handle update
   })
-  
+
   import.meta.hot.dispose((data) => {
     // Cleanup before module is replaced
   })
-  
-  import.meta.hot.invalidate()  // Force full reload
+
+  import.meta.hot.invalidate() // Force full reload
 }
 ```
+
+## WebAssembly
+
+### ESM Integration (Vite 8)
+
+Import a `.wasm` file directly — Vite instantiates it and re-exposes its exports as named ESM exports. Behaves as an async module (needs top-level `await`):
+
+```js
+import { add } from './add.wasm'
+console.log(add(1, 2)) // 3
+```
+
+For TS support, enable `allowArbitraryExtensions` and add `add.d.wasm.ts`. SSR builds rely on `node:fs`, so this only works in Node-compatible runtimes.
+
+### Manual Initialization
+
+```js
+import init from './example.wasm?init'
+const instance = await init({
+  imports: {
+    /* ... */
+  },
+})
+instance.exports.test()
+```
+
+## Chunk Import Map Optimization (Vite 8, experimental)
+
+Set `build.chunkImportMap: true` to reference chunks by stable ID via an import map instead of hashed URLs. Prevents cascading cache invalidation (updating a leaf chunk no longer invalidates its importers). Requires `import.meta.resolve` support (use `@vitejs/plugin-legacy` for older browsers).
 
 <!--
 Source references:
