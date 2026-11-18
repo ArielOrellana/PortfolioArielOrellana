@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ariel-orellana.github.io/PortfolioArielOrellana/sitemap.xml
+Sitemap: https://arielorellana.github.io/PortfolioArielOrellana/sitemap.xml

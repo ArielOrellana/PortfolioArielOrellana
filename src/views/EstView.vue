@@ -5,7 +5,7 @@ import studies from '../data/studies.json'
 
 <template>
   <section>
-    <h2 class="section-title">Estudios</h2>
+    <h1 class="section-title">Estudios</h1>
     <div class="timeline">
       <TimelineItem v-for="item in studies" :key="item.id" :item="item" />
     </div>

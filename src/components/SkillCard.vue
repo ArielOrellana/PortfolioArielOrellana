@@ -7,7 +7,7 @@ defineProps({
 <template>
   <div class="skill">
     <div class="skill-icon">
-      <img :src="skill.img" :alt="skill.titulo" loading="lazy" />
+      <img :src="skill.img" :alt="skill.titulo" loading="lazy" width="48" height="48" />
     </div>
     <span class="skill-name">{{ skill.titulo }}</span>
   </div>
@@ -19,7 +19,7 @@ defineProps({
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  padding: 1.2rem 0.8rem;
+  padding: 1rem 0.6rem;
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -34,17 +34,22 @@ defineProps({
   box-shadow: 0 6px 20px var(--primary-glow);
 }
 .skill-icon {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  border-radius: 12px;
 }
 .skill-icon img {
-  width: 100%;
-  height: 100%;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
-  filter: brightness(1.2);
+}
+/* GitHub se pide en blanco (para fondo oscuro): en tema claro se invierte */
+[data-theme='light'] .skill-icon img[src*='github'] {
+  filter: invert(1);
 }
 .skill-name {
   font-size: 0.8rem;

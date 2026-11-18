@@ -15,4 +15,8 @@ function randomValues(initial = false) {
     complete: () => randomValues(false),
   })
 }
-randomValues(true)
+
+// Los iconos decorativos solo se animan si el usuario no pidió movimiento reducido
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  randomValues(true)
+}

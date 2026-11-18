@@ -5,7 +5,7 @@ import projects from '../data/projects.json'
 
 <template>
   <section>
-    <h2 class="section-title">Portfolio</h2>
+    <h1 class="section-title">Portfolio</h1>
     <p class="section-sub">Proyectos en los que he trabajado</p>
     <div class="grid">
       <ProjectCard v-for="project in projects" :key="project.id" :card="project" />

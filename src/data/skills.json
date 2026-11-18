@@ -1,108 +1,130 @@
 [
   {
     "id": 1,
-    "img": "https://img.icons8.com/?size=100&id=YrKoPXb4jv9l&format=png&color=000000",
-    "titulo": "PHP"
+    "cat": "frontend",
+    "img": "https://cdn.simpleicons.org/vuedotjs/4FC08D",
+    "titulo": "Vue.js"
   },
   {
     "id": 2,
-    "img": "https://img.icons8.com/?size=100&id=lRjcvhvtR81o&format=png&color=000000",
-    "titulo": "Laravel"
+    "cat": "frontend",
+    "img": "https://cdn.simpleicons.org/react/61DAFB",
+    "titulo": "React"
   },
   {
     "id": 3,
-    "img": "https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=000000",
-    "titulo": "MySQL"
-  },
-  {
-    "id": 4,
-    "img": "https://img.icons8.com/?size=100&id=BUnExfsRs3CW&format=png&color=000000",
-    "titulo": "VueJs"
-  },
-  {
-    "id": 5,
-    "img": "https://img.icons8.com/?size=100&id=NfbyHexzVEDk&format=png&color=000000",
-    "titulo": "React Native"
-  },
-  {
-    "id": 6,
-    "img": "https://img.icons8.com/?size=100&id=9Um0Q4sZ0QCC&format=png&color=000000",
-    "titulo": "JQuery"
-  },
-  {
-    "id": 7,
-    "img": "https://img.icons8.com/?size=100&id=71257&format=png&color=000000",
-    "titulo": "AngularJS"
-  },
-  {
-    "id": 8,
-    "img": "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
-    "titulo": "Git"
-  },
-  {
-    "id": 9,
-    "img": "https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000",
-    "titulo": "GitHub"
-  },
-  {
-    "id": 10,
-    "img": "https://img.icons8.com/?size=100&id=34886&format=png&color=000000",
-    "titulo": "GitLab"
-  },
-  {
-    "id": 11,
-    "img": "https://img.icons8.com/?size=100&id=RlIXjuTUrwoX&format=png&color=000000",
-    "titulo": "API"
-  },
-  {
-    "id": 12,
-    "img": "https://img.icons8.com/?size=100&id=i19Ns28h30P4&format=png&color=000000",
-    "titulo": "VSCode"
-  },
-  {
-    "id": 13,
-    "img": "https://img.icons8.com/?size=100&id=20909&format=png&color=000000",
-    "titulo": "HTML"
-  },
-  {
-    "id": 14,
-    "img": "https://img.icons8.com/?size=100&id=21278&format=png&color=000000",
-    "titulo": "CSS"
-  },
-  {
-    "id": 15,
-    "img": "https://img.icons8.com/?size=100&id=108784&format=png&color=000000",
+    "cat": "frontend",
+    "img": "https://cdn.simpleicons.org/javascript/F7DF1E",
     "titulo": "JavaScript"
   },
   {
-    "id": 16,
-    "img": "https://img.icons8.com/?size=100&id=g9mmSxx3SwAI&format=png&color=000000",
-    "titulo": "Bootstrap"
+    "id": 4,
+    "cat": "frontend",
+    "img": "https://cdn.simpleicons.org/html5/E34F26",
+    "titulo": "HTML"
   },
+  { "id": 5, "cat": "frontend", "img": "https://cdn.simpleicons.org/css/1572B6", "titulo": "CSS" },
   {
-    "id": 17,
-    "img": "https://img.icons8.com/?size=100&id=QBqFNfPPB2Kx&format=png&color=000000",
+    "id": 6,
+    "cat": "frontend",
+    "img": "https://cdn.simpleicons.org/sass/CC6699",
     "titulo": "Sass"
   },
   {
-    "id": 18,
-    "img": "https://img.icons8.com/?size=100&id=TpULddJc4gTh&format=png&color=000000",
-    "titulo": "C++"
+    "id": 7,
+    "cat": "frontend",
+    "img": "https://cdn.simpleicons.org/bootstrap/7952B3",
+    "titulo": "Bootstrap"
   },
   {
+    "id": 8,
+    "cat": "frontend",
+    "img": "https://cdn.simpleicons.org/jquery/0769AD",
+    "titulo": "jQuery"
+  },
+  {
+    "id": 9,
+    "cat": "frontend",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
+    "titulo": "AngularJS"
+  },
+
+  { "id": 10, "cat": "backend", "img": "https://cdn.simpleicons.org/php/777BB4", "titulo": "PHP" },
+  {
+    "id": 11,
+    "cat": "backend",
+    "img": "https://cdn.simpleicons.org/laravel/FF2D20",
+    "titulo": "Laravel"
+  },
+  {
+    "id": 12,
+    "cat": "backend",
+    "img": "https://cdn.simpleicons.org/mysql/4479A1",
+    "titulo": "MySQL"
+  },
+  {
+    "id": 13,
+    "cat": "backend",
+    "img": "https://cdn.simpleicons.org/openapiinitiative/6BA539",
+    "titulo": "REST APIs"
+  },
+  {
+    "id": 14,
+    "cat": "backend",
+    "img": "https://cdn.simpleicons.org/docker/2496ED",
+    "titulo": "Docker"
+  },
+
+  {
+    "id": 15,
+    "cat": "mobile",
+    "img": "https://cdn.simpleicons.org/react/61DAFB",
+    "titulo": "React Native"
+  },
+  {
+    "id": 16,
+    "cat": "mobile",
+    "img": "https://cdn.simpleicons.org/flutter/02569B",
+    "titulo": "Flutter"
+  },
+  { "id": 17, "cat": "mobile", "img": "https://cdn.simpleicons.org/dart/0175C2", "titulo": "Dart" },
+
+  { "id": 18, "cat": "tools", "img": "https://cdn.simpleicons.org/git/F05032", "titulo": "Git" },
+  {
     "id": 19,
-    "img": "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000",
-    "titulo": "Dart"
+    "cat": "tools",
+    "img": "https://cdn.simpleicons.org/github/ffffff",
+    "titulo": "GitHub"
   },
   {
     "id": 20,
-    "img": "https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000",
-    "titulo": "Flutter"
+    "cat": "tools",
+    "img": "https://cdn.simpleicons.org/gitlab/FC6D26",
+    "titulo": "GitLab"
   },
   {
     "id": 21,
-    "img": "https://img.icons8.com/?size=100&id=21049&format=png&color=000000",
+    "cat": "tools",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+    "titulo": "VS Code"
+  },
+  {
+    "id": 22,
+    "cat": "tools",
+    "img": "https://cdn.simpleicons.org/trello/0052CC",
     "titulo": "Trello"
   },
-  { "id": 22, "img": "https://www.redmine.org/favicon.ico?1679302129", "titulo": "Redmine" }
+  {
+    "id": 23,
+    "cat": "tools",
+    "img": "https://cdn.simpleicons.org/redmine/B32024",
+    "titulo": "Redmine"
+  },
+
+  {
+    "id": 24,
+    "cat": "other",
+    "img": "https://cdn.simpleicons.org/cplusplus/00599C",
+    "titulo": "C++"
+  }
 ]

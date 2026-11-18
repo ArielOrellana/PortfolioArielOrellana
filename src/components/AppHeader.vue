@@ -2,10 +2,13 @@
 import { RouterLink } from 'vue-router'
 import SocialLinks from './SocialLinks.vue'
 import { useTheme } from '../composables/useTheme.js'
+import { getAssetUrl } from '../utils/assets'
 
 defineProps({ menuOpen: Boolean })
 const emit = defineEmits(['toggle-menu'])
 const { theme, toggle } = useTheme()
+
+const cvUrl = getAssetUrl('pdf/Curriculum-Ariel-Orellana-2026.pdf')
 
 const navItems = [
   { path: '/', label: 'Inicio' },
@@ -41,6 +44,10 @@ const navItems = [
         <RouterLink v-for="item in navItems" :key="item.path" :to="item.path" class="nav-link">{{
           item.label
         }}</RouterLink>
+        <a :href="cvUrl" target="_blank" rel="noopener" class="nav-cv">
+          <i class="fa-solid fa-download" aria-hidden="true"></i> CV
+          <span class="sr-only">(se abre en nueva ventana)</span>
+        </a>
         <button
           class="theme-btn"
           :aria-label="theme === 'dark' ? 'Modo claro' : 'Modo oscuro'"
@@ -67,6 +74,16 @@ const navItems = [
         @click="emit('toggle-menu')"
         >{{ item.label }}</RouterLink
       >
+      <a
+        :href="cvUrl"
+        target="_blank"
+        rel="noopener"
+        class="nav-link nav-cv-mobile"
+        @click="emit('toggle-menu')"
+      >
+        <i class="fa-solid fa-download" aria-hidden="true"></i> Descargar CV
+        <span class="sr-only">(se abre en nueva ventana)</span>
+      </a>
       <SocialLinks />
       <button
         class="theme-btn mobile-theme"
@@ -220,17 +237,51 @@ const navItems = [
   color: var(--primary);
 }
 
-@media (min-width: 768px) {
+.nav-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.nav-cv:hover {
+  background: #6666ff;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+.nav-cv-mobile {
+  margin-top: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  justify-content: center;
+}
+.nav-cv-mobile:hover {
+  background: #6666ff;
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
   .hamburger {
     display: none;
   }
   .nav-desktop {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.15rem;
   }
   .nav-desktop .nav-link {
-    padding: 0.4rem 0.7rem;
+    padding: 0.4rem 0.6rem;
     font-size: 0.85rem;
   }
   .nav-mobile {

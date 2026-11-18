@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
 import ErrorBoundary from './components/ErrorBoundary.vue'
 
 const menuOpen = ref(false)
@@ -23,6 +24,7 @@ function toggleMenu() {
       </router-view>
     </ErrorBoundary>
   </main>
+  <AppFooter />
   <div class="bg-noise" aria-hidden="true"></div>
   <div class="bg-shapes" aria-hidden="true">
     <i class="fa-solid fa-laptop-code dev-icon type-1"></i>
@@ -42,7 +44,7 @@ function toggleMenu() {
   max-width: 1100px;
   margin: 0 auto;
   padding: 1.5rem 1rem;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 200px);
   position: relative;
   z-index: 1;
 }

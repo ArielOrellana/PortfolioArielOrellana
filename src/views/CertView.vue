@@ -39,7 +39,7 @@ function onKeydown(e: KeyboardEvent) {
 
 <template>
   <section>
-    <h2 class="section-title">Certificados</h2>
+    <h1 class="section-title">Certificados</h1>
     <p class="section-sub">Mis certificaciones y cursos realizados</p>
     <div class="grid">
       <button

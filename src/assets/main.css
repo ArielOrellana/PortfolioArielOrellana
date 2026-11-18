@@ -9,6 +9,7 @@
   --text-muted: #8a8aa2;
   --primary: #7878f5;
   --primary-glow: rgba(120, 120, 245, 0.3);
+  --accent: #1cd99d;
   --radius: 12px;
   --radius-lg: 16px;
 }
@@ -24,6 +25,7 @@
   --text-muted: #6b6b85;
   --primary: #4444dd;
   --primary-glow: rgba(68, 68, 221, 0.2);
+  --accent: #0e9e6a;
 }
 
 * {
@@ -130,6 +132,17 @@ img {
 }
 .boton:active {
   transform: translateY(0);
+}
+.boton.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.boton.ghost:hover {
+  background: var(--bg-mute);
+  border-color: var(--primary);
+  color: var(--text);
+  box-shadow: none;
 }
 
 .section-title {

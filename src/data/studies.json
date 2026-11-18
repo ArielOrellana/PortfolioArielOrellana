@@ -1,5 +1,12 @@
 [
   {
+    "id": 12,
+    "titulo": "Tecnicatura de Programación",
+    "empresa": "UTN San Nicolás a Distancia",
+    "inicio": "2026",
+    "fin": "Actualidad"
+  },
+  {
     "id": 1,
     "titulo": "Tecnicatura Superior en Traductorado de Inglés",
     "empresa": "Instituto ANGLO",

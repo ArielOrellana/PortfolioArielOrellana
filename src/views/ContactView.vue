@@ -2,7 +2,7 @@
 
 <template>
   <section class="contact">
-    <h2 class="section-title">Contacto</h2>
+    <h1 class="section-title">Contacto</h1>
     <p class="contact-desc">Podés contactarme a través de cualquiera de estos medios</p>
     <div class="contact-grid">
       <a
@@ -50,8 +50,12 @@
         <span class="sr-only">(se abre en nueva ventana)</span>
       </a>
       <div class="contact-card email-card">
-        <i class="fa-solid fa-at" aria-hidden="true"></i>
-        <span>orellanaariel1998@gmail.com</span>
+        <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+        <span class="contact-lines">
+          <a href="mailto:orellanaariel1998@gmail.com">orellanaariel1998@gmail.com</a>
+          <span aria-hidden="true">·</span>
+          <a href="tel:+543815714627">+54 381 571-4627</a>
+        </span>
       </div>
     </div>
   </section>
@@ -111,5 +115,18 @@
 .email-card span {
   font-size: 0.9rem;
   color: var(--primary);
+}
+.contact-lines {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.contact-lines a {
+  color: var(--primary);
+}
+.contact-lines a:hover {
+  text-decoration: underline;
 }
 </style>
